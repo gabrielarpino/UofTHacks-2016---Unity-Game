@@ -1,0 +1,36 @@
+using UnityEngine;
+using System.Collections;
+
+public class ButtonMovement : TouchManager {
+
+	public bool moveRight = false;
+	public float movespeed = 5.0f;
+	public GameObject player = null;
+
+
+	// Update is called once per frame
+	void Update () {
+
+		TouchInput ();		// Keep updating TouchInput script
+	
+	}
+
+	void OnFirstTouch(){
+
+		if (moveRight) {
+
+			player.transform.Translate (Vector2.right * movespeed * Time.deltaTime);
+
+		}
+
+		else if (!moveRight) {
+
+			player.transform.Translate (-Vector2.right * movespeed * Time.deltaTime);
+
+		}
+
+
+
+
+}
+}
